@@ -32,3 +32,6 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+# add the react native lib to this repo so I can show code diffs
+!node_modules/react-native
