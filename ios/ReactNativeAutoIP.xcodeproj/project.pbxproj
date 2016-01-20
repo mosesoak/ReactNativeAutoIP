@@ -525,7 +525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh";
+			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh\n\n# The app needs the wifi IP to run on device. Write computer's IP address to a file in the app bundle.\nAPP_DIRECTORY=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nrm -f $APP_DIRECTORY/ReactNativeServerConfig.txt\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  touch $APP_DIRECTORY/ReactNativeServerConfig.txt\n  echo \"`ifconfig | grep inet\\\\ | tail -1 | cut -d \\\" \\\" -f 2`\" > $APP_DIRECTORY/ReactNativeServerConfig.txt\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
